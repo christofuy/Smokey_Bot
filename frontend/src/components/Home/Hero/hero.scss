@@ -1,10 +1,27 @@
 @import 'config.scss';
 
 .hero{
-	min-height:100vh;
+	min-height:140vh; //TODO: Adjust height
 	width:100%;
+	padding-top:30vh; //TODO: Is this responsive?
 	h1{
-		//TODO: Change default stylse?
+		max-width:22ch;
 		font-weight:400;
+		text-align:center;
+	}
+
+	.toc{
+		position:absolute;
+		left:0;
+		top:40%; //TODO: Adjust this to be centered
+		padding:0.5em 0.6em; //TODO: Adjust padding
+		background-color:rgba(255, 255, 255, 0.5);
+		border:1px solid rgba(255, 255, 255, 0.3);
+		&__item{
+			color:rgba(40, 40, 40, 0.8);
+			svg{
+				margin:0.25em 0;
+			}
+		}
 	}
 }
