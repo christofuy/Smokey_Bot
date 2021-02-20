@@ -1,3 +1,9 @@
+//chatbot intro
+function intro(){
+    console.log('Hello there! My name is Smokey the Bot and today I will be assisting you in whatever park needs you have!');
+    console.log('Start by inputting \"campgrounds\" or \"parks\"');
+}
+
 //created event listener, doesnt start until html is loaded
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#input").addEventListener("keydown", function(e) {
