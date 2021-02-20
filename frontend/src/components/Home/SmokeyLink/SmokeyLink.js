@@ -1,6 +1,7 @@
 import './SmokeyLink.scss'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
+import {useHistory} from 'react-router-dom'
 
 
 
@@ -21,6 +22,7 @@ const useStyle = makeStyles({
 
 const SmokeyLink = () => {
 	const classes = useStyle()
+	const history=useHistory()
 
 	return (
 		<section className='smokeylink flex jc-center ai-center'>
@@ -29,6 +31,7 @@ const SmokeyLink = () => {
 				<Button
 					variant='outlined'
 					className={classes.outlined}
+					onClick={()=>history.push('/chat')}
 				>Chat Now</Button>
 			</div>
 			<div className="footer"></div>
