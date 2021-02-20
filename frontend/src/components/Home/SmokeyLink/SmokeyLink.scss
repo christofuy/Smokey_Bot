@@ -9,7 +9,42 @@
 		margin-bottom:0.5em;
 	}
 }
+#footer {
+	flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+	padding: 50px;
+	background-color: black;
 
+  }
+
+#footer-text{
+	font-size: 18px;
+	color: white; 
+	font-weight: 200;
+	text-align: center;
+	
+}
+
+#footer-links{
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	//background-color:blue;
+	//flex-direction: row;
+}
+
+#footer-icons{
+	display: flex;
+	 justify-content: space-between;
+}
+
+#nps-test{
+	display: flex;
+
+}
+
+.logo{
+	width: 100px;
+}
 
 //.fadeIn3{
 	//opacity:0;
