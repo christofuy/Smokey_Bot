@@ -1,0 +1,14 @@
+@import 'config.scss';
+
+.smokeyinfo{
+	min-height:100vh;
+	&__img{
+		width:55%;
+		img{
+			max-width:90%;
+		}
+	}
+	&__txt{
+		width:45%;
+	}
+}
