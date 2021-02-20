@@ -57,6 +57,7 @@ h6{
 }
 
 a,span,p{
+	color:$grey;
 }
 
 a{
@@ -99,6 +100,9 @@ p{
 	}
 	&.jc-fstart{
 		justify-content:flex-start;
+	}
+	&.jc-fend{
+		justify-content:flex-end;
 	}
 	&.ai-center{
 		align-items:center;
