@@ -12,7 +12,8 @@ const Mission = () => {
 				</div>
 				<div className='mission__txt'>
 					<h2>Our Mission</h2>
-					<p>Our mission is to help spread awareness to all National park service parks around the nation. The chat bot’s purpose is to help give crucial information to those who are planning on going to and visiting a park.</p>
+					<p>Our mission is to help spread awareness and encourage visitation of the various and unique National Parks around the United States. 
+						The chat bot’s purpose is to help give useful information to those who are planning to visit a park.</p>
 				</div>
 			</div>
 		</section>
