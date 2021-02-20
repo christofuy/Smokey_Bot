@@ -45,7 +45,7 @@ const SmokeyLink = () => {
 
 	//TODO: Animations not working for some reason
 	return (
-		<section className='smokeylink flex jc-center ai-center' >
+		<section id='smokeylink' className='smokeylink flex jc-center ai-center' >
 			<div className='container flex flex-column ai-center'>
 				<h1 className='fadeIn3'>Talk to our Virtual Assistant, Smokey</h1>
 				<Button

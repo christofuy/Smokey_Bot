@@ -1,6 +1,7 @@
 import './hero.scss'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
+import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll'
 //Icons
 import HelpIcon from '@material-ui/icons/Help';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
@@ -33,10 +34,14 @@ const Hero = () => {
 		>
 			<div className='container flex flex-column ai-center'>
 				<h1>Visit Your Favorite National Park with Ease</h1>
-				<Button
-					variant='outlined'
-					className={classes.outlined}
-				>Learn More</Button>
+				<ScrollLink to='mission' spy smooth duration={1000}>
+					<Button
+						variant='outlined'
+						className={classes.outlined}
+					>
+						Learn More
+					</Button>
+				</ScrollLink>
 			</div>
 			<TOC />
 		</section>
@@ -48,10 +53,14 @@ const TOC = () => {
 	return (
 		<div className='toc'>
 			<div className='toc__item'>
-				<HelpIcon fontSize='medium'/>
+				<ScrollLink to='mission' spy smooth duration={1000}>
+					<HelpIcon/>
+				</ScrollLink>
 			</div>
 			<div className='toc__item'>
-				<RecordVoiceOverIcon fontSize='medium'/>
+				<ScrollLink to='smokeylink' spy smooth duration={1000}>
+					<RecordVoiceOverIcon/>
+				</ScrollLink>
 			</div>
 		</div>
 	)
