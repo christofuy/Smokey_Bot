@@ -11,11 +11,11 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.atlas.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true}
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log("MongoDB database connection established successfully");
+	console.log("MongoDB database connection established successfully");
 })
 //names need updates
 //const exercisesRouter = require('./routes/exercises');
@@ -24,6 +24,10 @@ connection.once('open', () => {
 //app.use('/exercises', exercisesRouter);
 //app.use('/users', usersRouter);
 
+
+//Add routes to API
+app.use('/api/chat', require('./routes/requests'))
+
 app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+	console.log(`Server is running on port: ${port}`);
 });
