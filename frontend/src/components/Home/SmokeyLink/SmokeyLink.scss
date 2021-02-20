@@ -39,7 +39,11 @@
 
 #nps-test{
 	display: flex;
-
+	background-color: blue;
+	align-items: center;
+  	gitdisplay: flex;
+  	justify-content: center;
+  	flex-direction: column;
 }
 
 .logo{
