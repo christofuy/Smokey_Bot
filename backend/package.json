@@ -1,0 +1,15 @@
+{
+    "name": "smokeybot",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server",
+        "server":"nodemon server"
+    },
+    "dependencies": {
+        "dotenv":"^8.2.0",
+        "express":"^4.17.1"
+    },
+    "devDependencies":{
+        "nodemon":"^2.0.4"
+    }
+}
