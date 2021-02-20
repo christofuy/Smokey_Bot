@@ -1,7 +1,6 @@
 //TODO: Try to find font that has light and thing font-weights
 //Try to learn about hosting  your own fonts?
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
-@import 'config.scss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap'); @import 'config.scss';
 
 *{
 	margin:0;
@@ -117,6 +116,5 @@ p{
 	width:90%;
 	max-width:1200px;
 	margin:0 auto;
-	&-sm{ max-width:450px; }
-	&-md{ max-width:900px; }
+	&-md{ max-width:777px; }
 }
