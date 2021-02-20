@@ -13,11 +13,11 @@ import SendIcon from '@material-ui/icons/Send';
 
 const MESSAGES = [
 	{
-		msg: "How can I help you?",
+		msg: "Hello there! My name is Smokey the Bot and today I will be assisting you in whatever park needs you have!",
 		user: 'smokey'
 	},
 	{
-		msg: "My name is Smokey",
+		msg: "Start by inputting \"campgrounds\" or \"parks\"",
 		user: 'smokey'
 	}
 ]
