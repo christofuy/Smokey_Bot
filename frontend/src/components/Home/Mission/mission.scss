@@ -1,0 +1,28 @@
+@import 'config.scss';
+
+
+.mission{
+	min-height:100vh;
+	&__img{
+		width:55%;
+		display:grid;
+		grid-template-columns:1fr 16fr 1fr;
+		grid-template-rows:1fr 16fr 1fr;
+		.backdrop{
+			max-width:90%;
+			height:100%;
+			grid-column:1 / span 2;
+			grid-row:1 / span 2;
+			background-color:$secondary;
+			z-index:-1;
+		}
+		img{
+			max-width:90%;
+			grid-column:2 / span 2;;
+			grid-row:2 / span 2;
+		}
+	}
+	&__txt{
+		width:45%;
+	}
+}
