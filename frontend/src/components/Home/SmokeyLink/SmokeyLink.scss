@@ -37,13 +37,25 @@
 	 justify-content: space-between;
 }
 
-#nps-test{
-	display: flex;
+#nps-test{	
+	background-color: blue;
+	//position: relative;
+	// display: block;
+	//flex-wrap: wrap;
+	// flex-direction: column;
+	width: 50%;
+	display: flex; 
+	position: relative; 
 
 }
 
 .logo{
-	width: 100px;
+	// width: 100px;
+	// margin-left: auto;
+	// margin-right: auto;
+	width: 35%;
+	// text-align: center;
+	
 }
 
 //.fadeIn3{
