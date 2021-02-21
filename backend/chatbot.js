@@ -1,23 +1,3 @@
-//chatbot intro
-function intro(){
-    console.log('Hello there! My name is Smokey the Bot and today I will be assisting you in whatever park needs you have!');
-    console.log('Start by inputting \"campgrounds\" or \"parks\"');
-}
-
-//created event listener, doesnt start until html is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#input").addEventListener("keydown", function(e) {
-      if (e.code === "Enter") {
-          console.log("You clicked the form and pressed the enter button!")
-      }
-    });
-  });
-
-//checks for intput after enter is pressed
-if (e.code === "Enter") {
-    let input = inputField.value;
-    console.log(`I typed '${input}'`)
-  }
 
 //removes all symbols from input
 function symbolRemove() {
@@ -52,17 +32,5 @@ function compare(triggerArray, replyArray, text) {
     return item;
   }
 
-  function addChat(input, product) {
-    const mainDiv = document.getElementById("main");
-    let userDiv = document.createElement("div");
-    userDiv.id = "user";
-    userDiv.innerHTML = `You: <span id="user-response">${input}</span>`;
-    mainDiv.appendChild(userDiv);
-  
-    let botDiv = document.createElement("div");
-    botDiv.id = "bot";
-    botDiv.innerHTML = `Chatbot: <span id="bot-response">${product}</span>`;
-    mainDiv.appendChild(botDiv);
-    speak(product);
-  }
+
 
