@@ -17,7 +17,7 @@ const MESSAGES = [
 		user: 'smokey'
 	},
 	{
-		msg: "Start by inputting \"campgrounds\" or \"parks\"",
+		msg: "You can ask me about the weather, location, entrance fees, hours of operation, and more!",
 		user: 'smokey'
 	}
 ]
@@ -98,11 +98,20 @@ const Message = ({msg, user, index}) => {
 		gsap.to('.msg', 0.2, {
 			opacity: 1,
 			y: 0,
+			stagger: {
+				amount: 0.3
+			}
 		})
 	}, [])
 
 	return (
-		<div id={`msg-${index}`} className={`msg msg-${user} flex`}>
+		<div id={`msg-${index}`} className={`msg msg-${user} flex ai-fend`}>
+			<div
+				className='msg__avatar'
+				style={{
+					background: `url(${user === 'user' ? '/User.jpg' : 'Smokey.jpg'}) center/cover no-repeat`
+				}}
+			/>
 			<p className='msg__txt'>{msg}</p>
 		</div>
 	)

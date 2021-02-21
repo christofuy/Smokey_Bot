@@ -118,3 +118,10 @@ p{
 	margin:0 auto;
 	&-md{ max-width:777px; }
 }
+
+
+//Animations
+.fadeIn,.fadeIn2,.fadeIn3{
+	opacity:0;
+	transform:translateY(60px);
+}

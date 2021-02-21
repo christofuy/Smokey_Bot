@@ -21,6 +21,7 @@
 		background-color:white;
 		border-radius:5px;
 		overflow:hidden;
+		box-shadow:0px 10px 10px rgba(0, 0,0,0.25);
 
 		&__header{
 			background-color:$primary;
@@ -39,8 +40,13 @@
 			padding:1em;
 			.msg{
 				opacity:0;//Animation
-				transform:translateY(10px);
+				transform:translateY(10px);// Animation
 				margin-bottom:0.5em;
+				&__avatar{
+					width:35px;
+					height:35px;
+					border-radius:50%;
+				}
 				&__txt{
 					margin:0;
 					padding:0.5em;
@@ -48,12 +54,19 @@
 					max-width:60%;
 				}
 				&-smokey{
+					.msg__avatar{
+						margin-right:0.75em;
+					}
 					.msg__txt{
 						background-color:#D5D5D5;
 					}
 				}
 				&-user{
 					justify-content:flex-end;
+					.msg__avatar{
+						order:2;
+						margin-left:0.75em;
+					}
 					.msg__txt{
 						background-color:lighten($primary,20%);
 					}

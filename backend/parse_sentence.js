@@ -18,9 +18,12 @@ function extract_park_code(word_list) {
 		temp_list.pop();
 		console.log(filtered_park_list.length);
 		for (var i = 0; i < filtered_park_list.length; i++) {
-
+            console.log(filtered_park_list[i]);
 			if (temp_list.includes(filtered_park_list[i])) {
-				return parkCode_dict[key];
+                if (temp_list.includes(filtered_park_list[0]))
+                {
+                    return parkCode_dict[key];
+                }
 			}
 		}
 	}
