@@ -1,30 +1,61 @@
-//const https = require('https')
-
-//const campground = 'https://developer.nps.gov/api/v1/' + endpoint +'?parkCode=' + parkCode + '&api_key=' + process.env.API_KEY
-
-//const req = https.request(campground, res => {
-//console.log(req.path)
-////path will be what info the user wants from the park eg (description, time, etc.)
-//});
-//
-//
 const express = require('express')
 const axios = require('axios')
 const router = express.Router()
+const parser = require('../parse_sentence')
+
+
+const {sentence_to_list, extract_park_code, extract_question} = parser
 
 router.post('/chat', async (req, res) => {
-	//TODO: Need to get user input from req object
-	//
+	//Raw User Input
+	const {msg} = req.body
+	console.log(msg)
+
+	let data = {}
+
+	//Parse msg here
+	const word_list = sentence_to_list(msg)
+	const park_code = extract_park_code(word_list)
+
+	if (park_code === 'Park not found') {
+		res.json({err: 'Can you specify the National Park in your question?'})
+		return
+	}
 
 
-	const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
-	const data = response.data
-
-	//TODO: Change message to what Smokey will actually say; dont' send back data
-	res.json({
-		msg: 'Hello World',
-		data
+	//Request NPS API
+	const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
+		headers: {
+			'X-Api-Key': 'dDdBtATvdfZOLDl4JYqNr9mplwap7H2GPrJKutxo'
+		},
+		params: {
+			'parkCode': park_code
+		}
 	})
+	let payload = response.data.data[0]
+
+
+	//Craft Message
+	const fields = extract_question(word_list)
+	if (!fields.length) {
+		res.json({err: "I do not understand. Please rephrase your question."})
+		return
+	}
+	console.log('Fields: ', fields)
+
+	fields.forEach(value => {
+		if (value instanceof Array) {
+			data = payload[value[0]] + "; " + payload[value[1]]
+			return
+		}
+		data = payload[value]
+		if (data instanceof Array) data = data[0]
+		console.log(data)
+		payload = data;
+	})
+
+	//Send back response
+	res.json({data})
 })
 
 

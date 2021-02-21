@@ -1,28 +1,23 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+//Middlware
+app.use(cors({origin: 'http://localhost:3000'})); //allow cors
 app.use(express.json());
 
-const uri = process.atlas.env.ATLAS_URI;
-mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true}
-);
-const connection = mongoose.connection;
-connection.once('open', () => {
-	console.log("MongoDB database connection established successfully");
-})
-//names need updates
-//const exercisesRouter = require('./routes/exercises');
-//const usersRouter = require('./routes/users');
-
-//app.use('/exercises', exercisesRouter);
-//app.use('/users', usersRouter);
+//const uri = process.atlas.env.ATLAS_URI;
+//mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true}
+//);
+//const connection = mongoose.connection;
+//connection.once('open', () => {
+//console.log("MongoDB database connection established successfully");
+//})
 
 
 //Add routes to API
