@@ -42,7 +42,9 @@ function extract_question(word_list) {
 	else if (word_list.includes("COST") || word_list.includes("ENTRANCE") || word_list.includes("FEES")) {
 		inquiry = ["entranceFees", ["cost", "description"]]; //multiple options for entrance fees, maybe 
 	}
-
+    else if ((word_list.includes("WHERE") && word_list.includes("IS")) || (word_list.includes("WHAT") && word_list.includes("STATE")) || (word_list.includes("WHAT") && word_list.includes("CITY"))) {
+        inquiry = ["addresses",["city", "stateCode"]];
+    }
 	return inquiry;
 }
 
