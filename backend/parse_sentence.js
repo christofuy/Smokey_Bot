@@ -3,12 +3,13 @@ const parkCode_dict = require("./dicts/parkcode_dict")
 //Splits string sentence into list.
 function sentence_to_list(sentence) {
 	sentence = sentence.toUpperCase();
+    sentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=?\-_`~()]/g, "");
 	return sentence.split(" ");
 }
 
 //Takes in word list, filters out common words to reduuce length of array.
 function extract_park_code(word_list) {
-	var search_terms = ['WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "HOW", "COST", "DOES", "IT", "NATIONAL", "PARK", "OF"]; //Can maybe make this a global variable?
+	var search_terms = ['WHATS', 'HOWS','WHAT\'S', 'ARE', 'FOR', 'HOW\'S', 'LIKE', 'WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "TO", "HOW", "COST", "MUCH", "DOES", "IT", "COST", "NATIONAL", "PARK", "OF"]; //Can maybe make this a global variable?
 	var filtered_park_list = word_list.filter(sw => !search_terms.includes(sw));
 
 	for (let key in parkCode_dict) {
@@ -19,11 +20,8 @@ function extract_park_code(word_list) {
 		console.log(filtered_park_list.length);
 		for (var i = 0; i < filtered_park_list.length; i++) {
             console.log(filtered_park_list[i]);
-			if (temp_list.includes(filtered_park_list[i])) {
-                if (temp_list.includes(filtered_park_list[0]))
-                {
-                    return parkCode_dict[key];
-                }
+			if (temp_list.includes(filtered_park_list[i]) && filtered_park_list[0] != "CANYON" && filtered_park_list[0] != "VALLEY") {
+                return parkCode_dict[key];
 			}
 		}
 	}
@@ -36,7 +34,7 @@ function extract_question(word_list) {
 	if (word_list.includes("HOURS") || word_list.includes("HOUR") || word_list.includes("OPERATING") || word_list.includes("OPERATION")) {
 		inquiry = ["operatingHours", "description"];
 	}
-	else if (word_list.includes("WEATHER") || word_list.includes("CLIMATE")) {
+	else if (word_list.includes("WEATHER") || word_list.includes("CLIMATE") || word_list.includes("TEMPERATURE")) {
 		inquiry = ["weatherInfo"];
 	}
 	else if (word_list.includes("DESCRIPTION") || (word_list.includes("TELL") && word_list.includes("ME") && word_list.includes("ABOUT"))) {
