@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './chat.scss'
 
-import {Link as ScrollLink} from 'react-scroll'
+import {animateScroll as scroll} from 'react-scroll'
 import gsap from 'gsap'
 
 //TODO: Try using input base
@@ -30,7 +30,10 @@ const Chat = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		MESSAGES.push({msg, user: 'user'})
-		//Scroll Function
+		//scroll.scrollTo('bottom',{
+		//duration:500,
+		//smooth:true,
+		//})
 		setMsg('')
 	}
 
