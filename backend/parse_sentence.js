@@ -9,7 +9,7 @@ function sentence_to_list(sentence) {
 
 //Takes in word list, filters out common words to reduuce length of array.
 function extract_park_code(word_list) {
-	var search_terms = ['WHATS', 'HOWS','WHAT\'S', 'ARE', 'FOR', 'HOW\'S', 'LIKE', 'WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "TO", "HOW", "COST", "MUCH", "DOES", "IT", "COST", "NATIONAL", "PARK", "OF"]; //Can maybe make this a global variable?
+	var search_terms = ['WHATS', 'HOWS','WHAT\'S', 'ARE', 'FOR', 'HOW\'S', 'LIKE', 'WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "TO", "HOW", "MUCH", "DOES", "IT", "COST", "NATIONAL", "PARK", "OF"]; //Can maybe make this a global variable?
 	var filtered_park_list = word_list.filter(sw => !search_terms.includes(sw));
 
 	for (let key in parkCode_dict) {
