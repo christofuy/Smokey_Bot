@@ -1,12 +1,9 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import './chat.scss'
 
-import {animateScroll as scroll} from 'react-scroll'
 import gsap from 'gsap'
 
-//TODO: Try using input base
-import InputBase from '@material-ui/core/InputBase'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SendIcon from '@material-ui/icons/Send';
 
@@ -24,6 +21,7 @@ const MESSAGES = [
 
 const Chat = () => {
 	const [msg, setMsg] = useState('')
+	const bottomRef = useRef()
 
 	//TODO : Convert the link to a button and make button styles
 
@@ -47,8 +45,10 @@ const Chat = () => {
 
 		reply.msg = data.err || data.data
 
+		bottomRef.current.scrollIntoView({behavior: 'smooth'})
 
 		MESSAGES.push(reply)
+
 		setMsg('')
 	}
 
@@ -70,7 +70,7 @@ const Chat = () => {
 						{MESSAGES.map((props, index) => (
 							<Message {...props} index={index} key={index} />
 						))}
-						<div id='bottom' />
+						<div id='bottom' ref={bottomRef}></div>
 					</div>
 					<div className='window__input'>
 						<form onSubmit={handleSubmit} className='flex ai-center'>
