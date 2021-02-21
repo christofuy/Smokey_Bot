@@ -1,4 +1,4 @@
-// const parkcode_dict = require("/")
+const parkCode_dict = require("./dicts/parkcode_dict")
 
 //Splits string sentence into list.
 function sentence_to_list(sentence)
@@ -8,15 +8,28 @@ function sentence_to_list(sentence)
 }
 
 //Takes in word list, filters out common words to reduuce length of array.
-function extract_park_name(word_list)
+function extract_park_code(word_list)
 {
-    var search_terms = ['WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "HOW", "COST", "DOES", "IT"]; //Can maybe make this a global variable?
-    let filtered_park_list = word_list.filter(sw => !search_terms.includes(sw));
+    var search_terms = ['WHERE', 'IS', 'THE', "AT", "WHEN", "WHAT", "TIME", "LOCATED", "OPEN", "CLOSED", "HOURS", "OPERATING", "HOW", "COST", "DOES", "IT", "NATIONAL", "PARK", "OF"]; //Can maybe make this a global variable?
+    var filtered_park_list = word_list.filter(sw => !search_terms.includes(sw));
 
-    
-
-    //find park code here using filtered_park_list?
-    return filtered_park_list;
+    for (let key in parkCode_dict)
+    {
+        let temp_key = key.toUpperCase();
+        let temp_list = temp_key.split(" ");
+        temp_list.pop();
+        temp_list.pop();
+        console.log( filtered_park_list.length);
+        for (var i = 0; i < filtered_park_list.length; i++)
+        {
+          
+            if (temp_list.includes(filtered_park_list[i]))
+            {
+                return parkCode_dict[key];
+            }
+        }
+    }
+    return "Park not found"; //only returns here if park was not found
 }
 
 //Gets keyword of the user's question, and calls that function to get info from NPS API.

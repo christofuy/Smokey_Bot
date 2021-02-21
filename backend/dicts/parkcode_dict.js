@@ -9,4 +9,4 @@ var parkCode_dict = {'Acadia National Park' : 'acad','Arches National Park' : 'a
 'Virgin islands National Park' : 'viis','Voyageurs National Park' : 'voya','Wind Cave National Park' : 'wica','Wrangell-St Elias National Park' : 'wrst','Yellowstone National Park' : 'yell','Yosemite National Park' : 'yose',
 'Zion National Park' : 'zion'}
 
-// module.exports = parkcode_dict
+module.exports = parkCode_dict;
