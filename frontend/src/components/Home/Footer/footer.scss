@@ -1,0 +1,47 @@
+@import 'config.scss';
+
+.footer{
+    background-color: rgba(255, 255, 255, 0.51);
+    //max-height:10vh ;
+    .footer-text{
+        font-size:15px;
+        text-align: center;
+    }
+    .footer-txt{
+        display: flex;
+        justify-content: space-between;
+        .donatetxt{
+           
+        }
+        .supporttxt{
+            
+        }
+        .volunteertxt{
+            
+        }
+    }
+    .footer-links{
+       // justify-content: space-between;
+       text-align: center;
+       display: flex;
+       justify-content: space-between;
+        .donate{
+            max-width: 300px;
+            //width: 100px;
+            //height: 100px;
+         }
+         .support{
+            
+            max-width: 2000px;
+            //width: 50px;
+            //height: 50px;
+         }
+         .volunteer{
+             max-width: 900px;
+            //width: 50px;
+           // height: 50px;
+         }
+    }
+
+        
+}
