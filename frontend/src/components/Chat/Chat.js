@@ -27,13 +27,28 @@ const Chat = () => {
 
 	//TODO : Convert the link to a button and make button styles
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		MESSAGES.push({msg, user: 'user'})
-		//scroll.scrollTo('bottom',{
-		//duration:500,
-		//smooth:true,
-		//})
+
+		const res = await fetch('http://localhost:5000/api/chat/chat', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify({msg})
+		})
+		const payload = await res.json()
+		const data = payload
+		console.log('Data: ', data)
+
+		const reply = {msg: '', user: 'smokey'}
+
+		reply.msg = data.err || data.data
+
+
+		MESSAGES.push(reply)
 		setMsg('')
 	}
 
@@ -61,6 +76,7 @@ const Chat = () => {
 						<form onSubmit={handleSubmit} className='flex ai-center'>
 							<input
 								type='text'
+								autoFocus
 								placeholder='Ask a question...'
 								value={msg}
 								onChange={e => setMsg(e.target.value)}
