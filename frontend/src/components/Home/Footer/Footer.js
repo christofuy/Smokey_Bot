@@ -37,7 +37,7 @@ const FOOTERLINKS = [
 		imgPath: '/npsLogo.png'
 	},
 	{
-		link: 'https://www.nationalparks.org/',
+		link: 'https://www.nationalparks.org/support',
 		text: 'Support',
 		imgPath: 'npfLogo.png'
 	},
