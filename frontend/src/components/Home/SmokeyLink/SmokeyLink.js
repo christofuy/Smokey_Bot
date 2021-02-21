@@ -19,12 +19,9 @@ const SmokeyLink = () => {
 
 
 	const intersecting = intersection && intersection.intersectionRatio >= 0.6
-	console.log(intersecting)
 
-	//TODO: Remove the console.log
 	if (intersecting) fadeIn('.fadeIn3')
 
-	//TODO: Animations not working for some reason
 	return (
 		<section id='smokeylink' className='smokeylink flex jc-center ai-center' ref={sectionRef}>
 			<div className='container flex flex-column ai-center'>
