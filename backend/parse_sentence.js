@@ -20,7 +20,7 @@ function extract_park_code(word_list) {
 		console.log(filtered_park_list.length);
 		for (var i = 0; i < filtered_park_list.length; i++) {
             console.log(filtered_park_list[i]);
-			if (temp_list.includes(filtered_park_list[i]) && filtered_park_list[0] != "CANYON" && filtered_park_list[0] != "VALLEY") {
+			if (temp_list.includes(filtered_park_list[i]) && filtered_park_list[i] != "CANYON" && filtered_park_list[i] != "VALLEY") {
                 return parkCode_dict[key];
 			}
 		}
