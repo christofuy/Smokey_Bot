@@ -79,6 +79,7 @@ const Chat = () => {
 								autoFocus
 								placeholder='Ask a question...'
 								value={msg}
+								className='inputField'
 								onChange={e => setMsg(e.target.value)}
 							/>
 							<button type='submit' className='sendIcon flex ai-center'>
