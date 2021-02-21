@@ -1,47 +1,42 @@
 @import 'config.scss';
 
-.footer{
-    background-color: rgba(255, 255, 255, 0.51);
-    //max-height:10vh ;
-    .footer-text{
-        font-size:15px;
-        text-align: center;
-    }
-    .footer-txt{
-        display: flex;
-        justify-content: space-between;
-        .donatetxt{
-           
-        }
-        .supporttxt{
-            
-        }
-        .volunteertxt{
-            
-        }
-    }
-    .footer-links{
-       // justify-content: space-between;
-       text-align: center;
-       display: flex;
-       justify-content: space-between;
-        .donate{
-            max-width: 300px;
-            //width: 100px;
-            //height: 100px;
-         }
-         .support{
-            
-            max-width: 2000px;
-            //width: 50px;
-            //height: 50px;
-         }
-         .volunteer{
-             max-width: 900px;
-            //width: 50px;
-           // height: 50px;
-         }
-    }
 
-        
+.footer{
+	background-color:darken($primary,60%);
+	padding:4em 0;
+	.footer-text{
+		text-align:center;
+		margin:0 auto 1em auto;
+		max-width:45ch;
+		color:white;
+		text-transform:capitalize;
+	}
+	&__row{
+		.footer__col{
+			width:33%;
+			p{
+				color:#ffffffbf;
+				border-bottom:1px solid;
+			}
+			.logo{
+				max-height:100px;
+				max-width:250px;
+			}
+		}
+	}
+}
+
+
+@media (max-width:700px){
+	.footer{
+		&__row{
+			flex-direction:column;
+			.footer__col{
+				width:100%;
+			}
+			.footer__col+.footer__col{
+				margin-top:1.5em;
+			}
+		}
+	}
 }
